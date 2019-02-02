@@ -1,7 +1,6 @@
 package com.revature.dao.impl;
 import java.sql.*;
 import org.springframework.stereotype.Repository;
-//import com.google.protobuf.ServiceException;
 import com.revature.dao.StudentDAO;
 import com.revature.exceptionhandling.ServicesException;
 @Repository
@@ -15,9 +14,9 @@ public class StudentDAOImpl implements StudentDAO{
 		try
 		{
 		 Class.forName("com.mysql.jdbc.Driver");
-		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/java","root","admin");
+		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/java","root","root");
    Statement st=con.createStatement();
-String s="select s.email,s.password from student s where  s.email='"+a+"' AND s.password='"+b+"' ";
+String s="select email,password from students where  email='"+a+"' AND password='"+b+"' ";
 ResultSet rs=st.executeQuery(s);
 if(rs.next())
 {

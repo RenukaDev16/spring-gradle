@@ -13,7 +13,6 @@ public class StudentServiceImpl implements StudentService {
 
 	@Autowired
 	StudentDAO dao;
-	
 	public Boolean login(String email,String password )throws ControllerException
 	{
 try
